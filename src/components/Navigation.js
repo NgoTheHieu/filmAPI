@@ -1,26 +1,26 @@
-import React, { Component } from 'react'
-
-export default class Navigation extends Component {
-    render() {
-        return (
-            <div>
-                <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Cras justo odio</li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Vestibulum at eros</li>
-  </ul>
-  <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-            </div>
-        )
-    }
+import React from 'react'
+import {Navbar,Nav,NavDropdown} from "react-bootstrap"
+import "bootstrap/dist/css/bootstrap.min.css";
+export default function Navigation() {
+    return (
+        <div>
+            <Navbar className="fixed-top" collapseOnSelect expand="lg" bg="dark" variant="dark">
+  <Navbar.Brand href="#home">Ngomax</Navbar.Brand>
+  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+  <Navbar.Collapse id="responsive-navbar-nav">
+    <Nav className="mr-auto">
+      <Nav.Link href="#features"></Nav.Link>
+      <Nav.Link href="#pricing"></Nav.Link>
+      
+    </Nav>
+    <Nav>
+      <Nav.Link href="#deets"></Nav.Link>
+      <Nav.Link eventKey={2} href="#memes">
+        Dank memes
+      </Nav.Link>
+    </Nav>
+  </Navbar.Collapse>
+</Navbar>
+        </div>
+    )
 }

@@ -1,7 +1,13 @@
 .App {
   text-align: center;
+  background-color:black;
 }
-
+.Banner{
+  opacity: initial;
+}
+.Card{
+  box-shadow: 10px 10px 10px yellow;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
