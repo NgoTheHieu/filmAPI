@@ -7,26 +7,34 @@ import Navigation from "./components/Navigation"
 import Banner from "./components/Banner"
 import Bottom from "./components/Bottom"
 const apiKey = `9d096b4dac12b79351687a03fc133138`;
+
 function App() {
+  
   let [movieList, setMovieList] = useState(null);
   let [genreList, setGenreList] = useState(null);
   let [movieGenre, setMovieGenre] = useState([]);
+  let [pageList,setPageList] = useState(1);
+  let [allGenre,setAllGenre] = useState([]);
+  
+  
+  
   const getNowPlayingMovie = async () => {
-    let url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`;
+    let url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=${pageList}`;
     let data = await fetch(url);
     let result = await data.json();
     setMovieList(result.results);
     console.log("movies", result);
-    
-  
-  
+    return result.results;
   };
   //GET GENRE DATA // 
   const getGenreData = async()=>{
     let url = `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}`
     let data = await fetch(url);
     let result = await data.json();
-    setGenreList(resullt)
+    setAllGenre(result)
+    setPageList(++);
+    movieList = getNowPlayingMovie()
+    console.log(movieList);
     console.log("Genre List:", result);
     //setGenreList(result2);
   //*End Of Get Genre Data*//
@@ -39,7 +47,7 @@ function App() {
   //*End of Hooking State*/
   //*Rendering Data function*//
   
-  if (movieList === null) {
+  if (movieList === null && genreList === null) {
     return <div className="App App-header" style={{ color: 'white' }}>
     <Spinner 
       animation="border"
@@ -61,7 +69,7 @@ function App() {
       </div>
       <div>
         
-      <Button class="d-flex justify-content-center" id="load-more-btn" variant="info" type="button" onClick={getNowPlayingMovie()}>
+      <Button class="d-flex justify-content-center" id="load-more-btn" variant="info" type="button" onClick={()=>getNowPlayingMovie()}>
           Load More
         </Button>
       </div>

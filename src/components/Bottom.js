@@ -7,17 +7,16 @@ export default function Bottom() {
       <MDBContainer fluid className="text-center text-md-left">
         <MDBRow>
           <MDBCol md="6">
-            <h5 className="title">Footer Content</h5>
+            <h5 className="title">Github</h5>
             <p>
-              Here you can use rows and columns here to organize your footer
-              content.
+              Follow me on Github and Social Media
             </p>
           </MDBCol>
           <MDBCol md="6">
             <h5 className="title"></h5>
             <ul>
               <li className="list-unstyled">
-                <a href="#!"></a>
+                <a href="https://github.com/NgoTheHieu">Github</a>
               </li>
               <li className="list-unstyled">
                 <a href="#!"></a>
