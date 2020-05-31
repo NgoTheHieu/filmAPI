@@ -32,7 +32,6 @@ function App() {
     let data = await fetch(url);
     let result = await data.json();
     setAllGenre(result)
-    setPageList(++);
     movieList = getNowPlayingMovie()
     console.log(movieList);
     console.log("Genre List:", result);
