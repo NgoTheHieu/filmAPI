@@ -10,7 +10,7 @@ export default function MovieList(props) {
   return (
     <div className="m-5 row center Card">
       {props.movieList.map((item) => {
-        return <MovieCard movie={item} />;
+        return <MovieCard movie={item} showModal={props.showModal} />;
       })}
     </div>
   );

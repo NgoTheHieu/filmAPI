@@ -2,7 +2,7 @@ import React from 'react'
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 export default function Bottom() {
     return (
-        <div>
+        <div class="white">
             <MDBFooter color="blue" className="font-small pt-4 mt-4">
       <MDBContainer fluid className="text-center text-md-left">
         <MDBRow>

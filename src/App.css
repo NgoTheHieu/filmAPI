@@ -2,6 +2,13 @@
   text-align: center;
   background-color:black;
 }
+.banner{
+  margin:50px;
+  padding:10px;
+}
+.white{
+  background-color:white;
+}
 .Banner{
   opacity: initial;
 }
